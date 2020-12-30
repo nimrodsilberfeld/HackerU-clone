@@ -1,0 +1,1420 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,400,900');
+@import url('https://fonts.googleapis.com/css?family=Anton');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+@import url('https://fonts.googleapis.com/css2?family=Heebo&display=swap');
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Heebo', sans-serif;
+}
+
+body {
+    margin: 0;
+    direction: rtl;
+    text-align: right;
+    font-size: 1rem;
+    background-color: #f5f8f9;
+}
+
+.desktop-only {
+    display: none;
+}
+
+.tablet-only {
+    display: none;
+}
+
+.logo {
+    grid-area: logo;
+}
+
+.title {
+    font-weight: bold;
+}
+
+footer .main {
+    margin: auto;
+    width: 50%;
+}
+
+.arrow {
+    content: url(./image/down-arrow.png);
+    height: 0.5rem;
+    vertical-align: middle;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.dynamic-nav__height {
+    height: auto !important;
+}
+
+.closeMainHeader {
+    align-items: start;
+    animation: mobile-menu__slide-up 200ms forwards;
+}
+
+.openedMainHeader {
+    grid-template-rows: 5rem auto;
+    align-items: start;
+    animation: mobile-menu__slide-down 200ms forwards;
+}
+
+.rotate45 {
+    transform: rotateZ(135deg) translateX(0.5rem) !important;
+    transform-origin: bottom;
+}
+
+.rotate-45 {
+    transform: rotateZ(-135deg) translateX(0.5rem) !important;
+    transform-origin: top;
+}
+
+.slide-middletoggle-bar {
+    transform: translate(3rem);
+    opacity: 0;
+}
+
+.open {
+    display: block !important;
+    opacity: 1 !important;
+    position: static !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
+}
+
+.dynamic-nav {
+    height: 6rem;
+    background: white;
+    display: grid;
+    grid-template-columns: 90% 10%;
+    grid-template-areas: "logo toggle" "menu menu";
+    z-index: 1;
+    padding: 0.8rem 0.8rem 0 0.8rem;
+}
+
+.main-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    background: #213a7f;
+    align-items: center;
+    height: 3.2rem;
+    justify-content: center;
+    color: white;
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+    justify-content: center;
+    margin-right: 0;
+}
+
+.main-nav ul li {
+    padding: 0 0.25rem;
+}
+
+.main-nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+.main-nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.dynamic-nav .mobile-dropdown {
+    position: fixed;
+    visibility: hidden;
+    transform: translateY(-20%);
+    opacity: 1;
+    padding: 0;
+    padding-right: 0.5rem;
+    transition: opacity 200ms, position 200ms, transform 150ms linear;
+    text-align: right;
+    display: grid;
+    grid-gap: 1.5rem;
+    justify-content: start;
+    align-self: start;
+    grid-area: menu;
+}
+
+.dynamic-nav .mobile-dropdown {
+    list-style: none;
+}
+
+.dynamic-nav .mobile-dropdown a {
+    text-decoration: none;
+    color: black;
+}
+
+.dynamic-nav .mobile-dropdown li {
+    padding-bottom: 1.6rem;
+}
+
+.dynamic-nav .mobile-dropdown .mobile-dropdown__sub-menu li {
+    padding-bottom: 10px;
+    padding-top: 10px;
+    list-style: none;
+    padding-right: 1rem;
+    border-bottom: 1px dashed #aad6be;
+}
+
+.dynamic-nav .mobile-dropdown .mobile-dropdown__sub-menu li a:hover {
+    color: #213A7F;
+    text-decoration: underline;
+}
+
+.dynamic-nav .mobile-dropdown ul {
+    display: none;
+}
+
+#toggle-button {
+    width: 2.5rem;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    align-self: start;
+    vertical-align: center;
+    outline: none;
+    padding: 0;
+    padding-top: 1rem;
+    grid-area: toggle;
+    justify-self: left;
+    box-sizing: border-box;
+}
+
+.toggle-button__bar {
+    transform: rotateZ(0) translate(0);
+    width: 100%;
+    height: 5px;
+    background: #213A7F;
+    display: block;
+    margin: 0.3rem 0;
+    border-radius: 2px;
+    transition: transform 200ms, opacity 200ms ease-in-out;
+}
+
+main .hero {
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 2.3rem 1rem;
+    background: linear-gradient(155deg, #8D25AA, #1046A1);
+}
+
+main .hero span {
+    display: block;
+    font-size: 1.3rem;
+}
+
+.courses {
+    display: grid;
+    width: 100%;
+    grid-template-rows: repeat(14, 1fr);
+    align-items: center;
+    align-content: center;
+    grid-gap: 0.2rem;
+}
+
+.courses a {
+    color: #333;
+    border: 1px solid rgba(204, 204, 204, 0.5);
+    padding: 1rem 0;
+    position: relative;
+    text-decoration: none;
+}
+
+.courses a::after {
+    content: url('https://www.hackeru.co.il/assets/site/images/arrow.svg');
+    min-width: 10px;
+    position: absolute;
+    left: 0.5rem;
+    bottom: 30%;
+}
+
+.courses a .fadeInUp {
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-shrink: 0;
+}
+
+.courses .course-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: 0.5rem;
+}
+
+.courses a div .course-icon img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.courses a div .course-seperator {
+    margin: 0.3rem;
+    width: 0.3rem;
+    height: 3rem;
+    border-radius: 3px;
+}
+
+.courses .name {
+    width: 75%;
+    margin: 0 auto;
+    font-size: 15px;
+    text-align: right;
+    flex-shrink: 1;
+}
+
+.alignUp {
+    animation: alignUp 700ms linear forwards;
+}
+
+.slide-middletoggle-bar {
+    transform: translate(3rem);
+    opacity: 0;
+}
+
+.buisness {
+    display: flex;
+    position: absolute;
+    background: #f8fbfc;
+    right: 0vw;
+    justify-content: flex-start;
+    width: 100%;
+    top: 78rem;
+    height: 145px;
+    box-shadow: 0px 3px 6px #828286;
+    margin-bottom: 60px;
+}
+
+.buisness .inner {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+.buisness .first-inner {
+    background: transparent linear-gradient(252deg, #FFFFFF 0%, #f1f2f5 100%) 0% 0% no-repeat padding-box !important;
+}
+
+.buisness .bz {
+    font-size: 19px;
+    width: 100px;
+    height: 100%;
+    text-align: center;
+    background: transparent;
+    color: #fff;
+    padding-top: 10px;
+}
+
+.buisness .bz img {
+    height: 3em;
+    margin-top: 30px;
+    margin-right: 0;
+    margin-bottom: 5px;
+    vertical-align: middle;
+    border: 0;
+}
+
+.inner .left {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 0;
+    float: left;
+}
+
+.inner .left h3 {
+    padding-top: 0.5em;
+    margin: 0.6em 0 0.3em;
+    font-size: 20px;
+    font-weight: bolder;
+    color: inherit;
+    line-height: 1.1;
+}
+
+.buisness .inner p {
+    line-height: 1;
+    color: #373737;
+    margin-right: 0;
+    margin-top: 0;
+    font-size: 13px;
+    width: 260px;
+    margin-bottom: 0.2em;
+    padding: 0;
+}
+
+.buisness .inner a {
+    color: #213a7f;
+    margin-top: 2px;
+    margin-left: 0;
+    font-size: 0.7rem;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-decoration: none;
+}
+
+section#second {
+    margin-top: 4rem;
+    padding: 3rem;
+    background: url(https://www.hackeru.co.il/assets/site/images/bg_4.png);
+}
+
+#second .main {
+    margin: 0 auto;
+    width: 80%;
+}
+
+#second .main h3 {
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    font-size: 2rem;
+    width: 100%;
+    margin: 0 auto;
+}
+
+#second .main .advantages {
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+#second .main .advantage {
+    width: 22rem;
+    display: block;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+#second .main .advantage .img-container {
+    align-self: flex-start;
+    padding: 1rem;
+}
+
+#second .advantages .advantage a {
+    display: inline-block;
+    color: #213a7f;
+    text-decoration: underline;
+}
+
+.advantage-content {
+    align-self: flex-start;
+}
+
+#third {
+    width: 100%;
+    float: right;
+    padding-top: 94px;
+    padding-bottom: 50px;
+}
+
+#third .main {
+    margin: 0 auto;
+    width: 70%;
+    position: relative;
+}
+
+#third .video {
+    width: 305px;
+    height: 215px;
+    box-shadow: 3px 3xp 7px 0 rgba(139, 145, 147, .4);
+    position: relative;
+    margin: 0 auto;
+    top: -10rem;
+    padding: 2px;
+    background: #fff;
+}
+
+#third .video a img {
+    width: 300px;
+    vertical-align: middle;
+}
+
+#third .video span {
+    margin-right: 11px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #213a7f;
+}
+
+.moreInfo::after {
+    content: '\2B11';
+    margin-right: 7px;
+    vertical-align: middle;
+    font-size: 30px;
+}
+
+#third .title {
+    font-size: 44px;
+    width: 300px;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#third p {
+    width: 290px;
+    color: #333;
+    margin: 0 auto;
+    margin-bottom: 10px;
+}
+
+#fourth .fourth-main {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.fourth-main .fourth-form {
+    margin: 0 auto;
+    width: 90%;
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.fourth-form .input {
+    background: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    padding-right: 0.5rem;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+}
+
+.fourth-form .input input {
+    justify-self: end;
+    outline: none;
+    border: none;
+}
+
+.fourth-form .button {
+    background: #18FFFF;
+    border: 4px solid #00B8D4;
+    font-weight: 900;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-size: 1.8rem;
+    outline: none;
+    font: inherit;
+    font-weight: bold;
+    font-size: 2rem;
+    cursor: pointer;
+    width: 100%;
+}
+
+.fourth-form .checkbox {
+    margin: 2rem auto;
+    width: 50%;
+    align-self: center;
+    text-align: center;
+    color: white;
+}
+
+.fourth-form .checkbox a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.more-information {
+    display: flex;
+    margin-bottom: 50px;
+    justify-content: space-around;
+}
+
+.branches-container {
+    text-align: center;
+    background: url(https://www.hackeru.co.il/assets/site/images/footer-contact.jpg);
+    padding: 7px 6px;
+    color: #213a7f;
+}
+
+.branches-container .branches {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.branches-container .branches .info {
+    width: 200px;
+    font-size: 18px;
+}
+
+.branches-container .branches .info p {
+    margin: 0 auto 40px;
+}
+
+.no-mobile {
+    display: none;
+}
+
+@media(min-width:30rem) {
+    .tablet-only {
+        display: block;
+    }
+    main .hero {
+        font-size: 1.5rem;
+    }
+    .main-nav {
+        display: flex;
+    }
+    main .hero span {
+        font-size: 1.7rem;
+    }
+    .courses a div .course-seperator {
+        margin: auto;
+        margin-top: 5px;
+        width: 3rem;
+        height: 0.3rem;
+        border-radius: 3px;
+    }
+    .buisness {
+        display: flex;
+    }
+    #first {
+        padding-bottom: 10rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    #first .courses {
+        display: grid;
+        width: 100%;
+        max-width: 40rem;
+        grid-row-gap: 3rem;
+        padding-top: 2rem;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: 1fr repeat(4, 2fr);
+        align-items: center;
+    }
+    #first .courses .title {
+        grid-column: span 4;
+        text-align: right;
+        font-size: 2.5rem;
+        justify-self: center;
+    }
+    .courses a {
+        border: none;
+        text-decoration: none;
+    }
+    .courses a .course-seperator {
+        display: block;
+        height: 0.25rem;
+        width: 2.5rem;
+        border-radius: 25px;
+        margin: 6px auto;
+    }
+    .courses a .fadeInUp {
+        height: 7rem;
+        display: block;
+    }
+    .courses a .fadeInUp:hover .course-icon img, .courses a .fadeInUp:hover .name {
+        opacity: 0.7;
+    }
+    .courses a .fadeInUp .course-icon {
+        margin: 0 auto;
+    }
+    .courses a .name {
+        text-align: center;
+        font-size: 14px;
+    }
+    .courses a::after {
+        content: none;
+    }
+    #last-course {
+        position: relative;
+        right: 15rem;
+    }
+    #second .main .advantages {
+        justify-content: center;
+    }
+}
+
+@media(min-width: 70rem) {
+    .desktop-only {
+        display: block;
+    }
+    #whatsUp {
+        display: block;
+        font-size: 20px;
+        background-color: #25d366;
+        border: 2px solid #25d366;
+        border-radius: 50px;
+        position: fixed;
+        z-index: 300;
+        bottom: 2%;
+        right: 1%;
+        padding: 5px 10px;
+        box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.4);
+        font-weight: bold;
+    }
+    #whatsUp-Content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #whatsUp a {
+        margin-right: 0.5rem;
+        width: 100%;
+        text-decoration: none;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    main .hero {
+        font-size: 2.2rem;
+    }
+    main .hero span {
+        font-size: 2.8rem;
+    }
+    .dynamic-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        height: 5.5rem;
+        background-color: white;
+        padding: 0;
+    }
+    .mobile-dropdown {
+        display: none;
+    }
+    .backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 200;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        transition: opacity 0.2s linear;
+    }
+    .main-nav {
+        display: flex;
+    }
+    .main-nav .search-bar {
+        margin: 0 3rem;
+        background: #122046;
+        height: 100%;
+        display: flex;
+        align-items: center;
+    }
+    .main-nav ul {
+        margin-right: 6rem;
+    }
+    .main-nav .search-bar .input {
+        background: none;
+        color: white;
+        outline: none;
+        border: none;
+        padding: 0.5rem;
+        font-size: 1.1rem;
+        width: 12rem;
+    }
+    .main-nav .search-bar button {
+        background: none;
+        border: none;
+        outline: none;
+        padding: 0 0.5rem;
+        padding-top: 3px;
+        cursor: pointer;
+    }
+    .main-nav .search-bar img {
+        height: 0.9rem;
+        vertical-align: middle;
+    }
+    .modal {
+        position: fixed;
+        top: 10vh;
+        right: 30vw;
+        width: 35rem;
+        height: 35rem;
+        background: white;
+        z-index: 300;
+        border-radius: 50%;
+        overflow: hidden;
+        animation: modal-slide 500ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
+    }
+    .close-modal {
+        opacity: 0;
+        transition: opacity 300ms ease-out;
+    }
+    .modal .popup-form {
+        position: relative;
+        z-index: 100;
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        height: 90%;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: space-around;
+    }
+    .modal .popup-form h3 {
+        position: relative;
+        color: #782aa9;
+        font-size: 26px;
+        top: 25px;
+        font-weight: bolder;
+    }
+    .modal .popup-form h2 {
+        position: relative;
+        color: rgb(21, 75, 156);
+        font-size: 33px;
+        text-align: center;
+        top: 1rem;
+    }
+    .modal .popup-form h4 {
+        color: #782aa9;
+        text-align: center;
+        font-size: 25px;
+        position: relative;
+        top: 2px;
+        font-weight: lighter;
+    }
+    .modal .popup-form form {
+        position: relative;
+        top: 0rem;
+        display: flex;
+        height: 15rem;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    .modal .popup-form form input[type="text"] {
+        width: 100%;
+        height: 40px;
+        border: none;
+        box-shadow: rgb(33, 59, 127) 0px 0px 4px -1px;
+    }
+    .modal .popup-form form input::placeholder {
+        color: #213a7f;
+        font-weight: bolder;
+        padding-right: 1rem;
+    }
+    .modal .popup-form form label {
+        color: #213a7f;
+        font-size: 15px;
+        font-weight: bold;
+    }
+    .modal .popup-form form button {
+        align-self: center;
+        color: white;
+        background-color: rgb(24, 85, 136);
+        font-size: 20px;
+        border: none;
+        border-radius: 5%;
+        width: 80%;
+        height: 2.5rem;
+    }
+    .modal .popup-form svg {
+        width: 1.7rem;
+        height: 1.7rem;
+        cursor: pointer;
+    }
+    #pens {
+        position: absolute;
+        transform: translateX(-10%) translateY(-5%);
+        overflow: hidden;
+        height: 10rem;
+    }
+    #marker {
+        position: absolute;
+        transform: translateX(-10%) translateY(250%) rotateZ(30deg);
+        background: 0;
+        width: 10rem;
+        height: 10rem;
+        overflow: hidden;
+    }
+    #marker img {
+        transform: translateX(30%) translateY(-45%);
+    }
+    .modal #computer {
+        position: absolute;
+        transform: translateX(-80%) translateY(80%) rotateZ(-130deg);
+        width: 20rem;
+        height: 20rem;
+    }
+    .modal #computer img {
+        transform: translateX(10%) translateY(15%) scale(-1, 1);
+    }
+}
+
+@media(min-width: 70rem) {
+    .desktop-only {
+        display: block;
+    }
+    #toggle-button {
+        display: none;
+    }
+    .dynamic-nav {
+        justify-content: center;
+        align-items: flex-end;
+    }
+    .dynamic-nav .units, .dynamic-nav .logo {
+        padding: 0 0.8rem;
+        padding-bottom: 1rem;
+    }
+    .dynamic-nav .units a {
+        color: #000;
+        text-decoration: none;
+    }
+    .dynamic-nav .units .dropDown:hover {
+        text-decoration: underline;
+    }
+    .dynamic-nav .units .drop-down__items a:hover {
+        color: rgb(58, 58, 173);
+        background: #aad6be;
+        text-decoration: none;
+    }
+    .dynamic-nav .units ul {
+        display: none;
+        list-style: none;
+        background: #213a7f;
+        z-index: 100;
+        flex-wrap: wrap;
+        flex-direction: column;
+        position: absolute;
+        top: 5rem;
+        max-height: 20rem;
+        border-radius: 5px;
+        padding: 0.8rem 1rem;
+        box-shadow: 0 6px 12px rgba(0, 0, 0, .175);
+    }
+    .dynamic-nav .units ul li {
+        padding: 0.5rem;
+        max-width: 10rem;
+        font-size: 0.8rem;
+        line-height: 1.2rem;
+        height: 100%;
+    }
+    .dynamic-nav .units .big-list {
+        max-height: 18rem;
+        width: 35rem;
+    }
+    .dynamic-nav .units ul li a {
+        color: #aad6be;
+        font-weight: bold;
+    }
+    .dynamic-nav .soldier-tag {
+        background: url(https://www.hackeru.co.il/assets/site/images/soldier.png) center/cover no-repeat;
+        align-self: baseline;
+        margin-right: 60px;
+        width: 5rem;
+        height: 7rem;
+        z-index: 10;
+        text-align: center;
+        color: white;
+        padding: 1rem;
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
+    .dynamic-nav .soldier-tag a {
+        color: white;
+        text-decoration: underline;
+        display: block;
+        margin-top: 10px;
+        font-size: 0.6rem;
+    }
+}
+
+.form .input, .contact-information .input {
+    background: white;
+    padding: 1.5rem 0.5rem 1.5rem 1rem;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+}
+
+.form .input input, .contact-information .input input {
+    justify-self: end;
+    outline: none;
+    border: none;
+}
+
+.contact-information .button {
+    background: #18FFFF;
+    border: 4px solid #00B8D4;
+    font-weight: 900;
+    padding: 0.5rem;
+    margin-top: 13px;
+    font-size: 1.8rem;
+    width: 100%;
+    outline: none;
+    font: inherit;
+    font-weight: bold;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+.form .checkbox, .contact-information .checkbox {
+    align-self: center;
+    text-align: center;
+    color: white;
+}
+
+.form .checkbox a, .contact-information .checkbox a {
+    color: white;
+    display: block;
+    font-size: 0.9rem;
+}
+
+#third {
+    background: white;
+}
+
+#fourth {
+    background: #213b7f;
+    padding: 1rem;
+}
+
+#fourth .fourth-main {
+    position: relative;
+    top: 3rem;
+}
+
+#fourth .fourth-main>.title {
+    color: white;
+    font-size: 1.2rem;
+    padding: 2rem 0;
+    font-weight: 400;
+}
+
+.social {
+    margin: 0 auto;
+    text-align: center;
+    padding: 1rem;
+}
+
+.bt-icons {
+    margin: auto;
+    width: 50%;
+}
+
+.lazy {
+    width: 100%;
+}
+
+@media(min-width: 70rem) {
+    .desktop-only {
+        display: block;
+    }
+    #first .courses {
+        display: grid;
+        width: 60%;
+        max-width: 40rem;
+        grid-row-gap: 1.5rem;
+        padding-top: 0rem;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        align-items: center;
+    }
+    #first {
+        padding-bottom: 5rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+    }
+    #first .courses .title {
+        grid-column: 1/span 4;
+        text-align: right;
+        font-size: 2.8rem;
+        font-weight: 550;
+        color: rgb(58, 54, 54);
+    }
+    #first {
+        justify-content: center;
+    }
+    .courses a {
+        color: #333;
+        border: 1px solid rgba(204, 204, 204, 0.5);
+        padding: 1rem 0;
+    }
+    #last-course {
+        right: 0;
+    }
+    .courses a:hover {
+        opacity: 0.7;
+    }
+    .courses .course-icon {
+        width: 2.5rem;
+        height: 2.5rem;
+        margin: 1rem;
+    }
+    .courses .name {
+        margin: 0;
+        padding: 0.3rem;
+        /* margin-right: 1rem; */
+        width: auto;
+        font-size: 0.9rem;
+        text-align: right;
+        flex-shrink: 1;
+        text-align: center;
+    }
+    .courses a {
+        border: none;
+        text-decoration: none;
+    }
+    .courses a .course-seperator {
+        display: block;
+        height: 0.25rem;
+        width: 2.5rem;
+        border-radius: 25px;
+        margin: 6px auto;
+    }
+    .courses a .fadeInUp {
+        height: 7rem;
+        display: block;
+    }
+    .courses a .fadeInUp .course-icon {
+        margin: 0 auto;
+    }
+    .contact-information {
+        margin-right: 1rem;
+        background: linear-gradient(135deg, #8e24aa 2%, #0d47a1 100%);
+        padding: 2rem 1.5rem;
+        width: 30%;
+        max-width: 19rem;
+        height: 30rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, .175);
+    }
+    .sp {
+        font-size: 0.7rem;
+        direction: rtl;
+        width: 190px;
+    }
+    .sp-policy {
+        font-size: 0.7rem;
+    }
+    .contact-information .input {
+        height: 4rem;
+    }
+    .contact-information .input label {
+        min-width: 4rem;
+    }
+    .contact-information .input input {
+        overflow: hidden;
+    }
+    .contact-information h3 {
+        color: white;
+        text-align: right;
+    }
+    .buisness {
+        width: 940px;
+        top: 75rem;
+        right: 20vw;
+    }
+    section#second {
+        margin-top: 4rem;
+        padding: 3rem;
+        background: url(https://www.hackeru.co.il/assets/site/images/bg_4.png);
+    }
+    #second .main {
+        margin: 0 auto;
+        width: 70%;
+    }
+    #second .main h3 {
+        margin-top: 4rem;
+        margin-bottom: 2rem;
+        font-size: 2.5rem;
+        width: auto;
+        margin-right: 1rem;
+    }
+    #second .main .advantages {
+        min-width: 45rem;
+        max-width: 55rem;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    #third .video {
+        position: absolute;
+        top: -220px;
+        left: 17%;
+    }
+    #third .title {
+        font-size: 44px;
+        margin: 0 0 15px;
+    }
+    #third p {
+        width: 290px;
+        color: #333;
+        margin-left: 17px;
+        float: right;
+    }
+    #third h4 {
+        font-size: 30px;
+        color: #333;
+        margin: 14px 11px;
+    }
+    .clear {
+        clear: both;
+    }
+    #third .main .our-process {
+        display: flex;
+        justify-content: space-between;
+    }
+    #third .main .our-process .bounceInRight {
+        transform: translateX(1000%);
+        width: 14rem;
+        height: 20rem;
+        color: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    }
+    #third .main .our-process .bounceInRight img {
+        align-self: flex-start;
+        position: relative;
+        top: 3rem;
+    }
+    #third .main .our-process .bounceInRight .num {
+        width: 3.5rem;
+        height: 3.5rem;
+        border-radius: 50%;
+        background: white;
+        text-align: center;
+        vertical-align: bottom;
+    }
+    #third .main .our-process .bounceInRight .num span {
+        font-size: 2rem;
+        margin-top: 0.5rem;
+        display: block;
+    }
+    #third .main .our-process .bounceInRight h5 {
+        text-align: center;
+        padding: 0.51rem 0;
+        font-size: 1.5rem;
+        font-weight: 400;
+        border-bottom: 1px solid white;
+        width: 90%;
+    }
+    #third .level p {
+        line-height: 1.2;
+        margin-top: 11px;
+        font-size: 18px;
+        font-weight: lighter;
+        width: 207px;
+        color: #fff;
+        margin-right: 6.5px;
+        text-align: center;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    #third .meeting {
+        margin: 49px auto 0;
+        width: 302px;
+        height: 70px;
+        padding: 3px;
+        background: #213a7f;
+    }
+    .popup-contact-btn {
+        text-decoration: none;
+    }
+    #third .meeting .mt {
+        padding-top: 10px;
+        width: 100%;
+        height: 100%;
+        border: 2px solid #aad6be;
+        font-size: 26px;
+        text-align: center;
+        color: #fff;
+    }
+    #third .scroll {
+        position: relative;
+        z-index: 10;
+        height: 4rem;
+        background: white;
+        margin-top: 3.5rem;
+    }
+    #third .scroll ul {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow: hidden;
+        white-space: nowrap;
+        padding-top: 1.5rem;
+        list-style-type: none;
+    }
+    #third .scroll ul li {
+        animation: scroller 20s infinite linear;
+    }
+    #third .scroll ul:hover li {
+        animation-play-state: paused;
+    }
+    .right-animate_1 {
+        animation: right-slide 800ms ease-in-out forwards;
+    }
+    .right-animate_2 {
+        animation: right-slide 800ms 300ms ease-in-out forwards;
+    }
+    .right-animate_3 {
+        animation: right-slide 800ms 600ms ease-in-out forwards;
+    }
+    .right-animate_4 {
+        animation: right-slide 800ms 900ms ease-in-out forwards;
+    }
+    #fourth .fourth-main {
+        width: 80%;
+        margin: 0 auto;
+    }
+    .fourth-main .fourth-form {
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        height: 8rem;
+    }
+    .fourth-form .input {
+        background: white;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-right: 0.5rem;
+        display: flex;
+        flex-wrap: nowrap;
+        align-items: center;
+        width: 23%;
+    }
+    .fourth-form .input input {
+        justify-self: end;
+        outline: none;
+        border: none;
+    }
+    .fourth-form .button {
+        background: #18FFFF;
+        border: 4px solid #00B8D4;
+        font-weight: 900;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        font-size: 1.8rem;
+        outline: none;
+        font: inherit;
+        font-weight: bold;
+        font-size: 2rem;
+        cursor: pointer;
+        width: 27%;
+    }
+    #fourth .social {
+        margin: 0;
+        padding: 2rem 0;
+        text-align: right;
+    }
+    .links {
+        display: flex;
+        width: 70%;
+        justify-content: space-between;
+    }
+    .links h4 {
+        font-weight: lighter;
+        font-size: 25px;
+    }
+    .links .list {
+        width: 10rem;
+        color: white;
+        list-style-type: none;
+    }
+    .links ul {
+        list-style-type: none;
+        font-size: 15px;
+        margin-bottom: 3rem;
+    }
+    .links ul li:hover {
+        text-decoration: underline;
+        cursor: pointer;
+    }
+}
+
+@keyframes scroller {
+    0% {
+        transform: translateX(100vw);
+    }
+    100% {
+        transform: translateX(0vw);
+    }
+}
+
+@keyframes modal-slide {
+    from {
+        transform: translateY(-10vh);
+        opacity: 0.5;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes alignUp {
+    0% {
+        transform: translateY(1rem);
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes right-slide {
+    0% {
+        transform: translateX(700%);
+    }
+    65% {
+        transform: translateX(-10%);
+    }
+    85% {
+        transform: translateX(10%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes mobile-menu__slide-up {
+    from {
+        height: 30rem;
+    }
+    to {
+        height: 6rem;
+    }
+}
+
+@keyframes mobile-menu__slide-down {
+    from {
+        height: 6rem;
+    }
+    to {
+        height: auto;
+    }
+}
